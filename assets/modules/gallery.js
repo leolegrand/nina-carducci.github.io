@@ -4,13 +4,14 @@ export const createGallery = (gallery) => {
   const DOMGallery = document.body.querySelector('#gallery')
   const tags = []
 
+  DOMGallery.innerHTML = ''
   gallery.map((image) => {
     // Remove the tags that are duplicates then create a button for each of them
     if (tags.indexOf(image.tag) === -1) {
       tags.push(image.tag)
       DOMTags.innerHTML += `<li><button>${image.tag}</button></li>`
     }
-    DOMGallery.innerHTML = ''
+
     DOMGallery.innerHTML += `<img width="600" height="600" srcset="${image.imageUrl}?w=360 320w, ${image.imageUrl}?w=575 640w, ${image.imageUrl}?w=900 1024w" src="${image.imageUrl}?w=900"  alt="${image.altText}" data-tag="${image.tag}">`
   })
 
