@@ -57,7 +57,6 @@ export const createSlider = (slider) => {
 
   const nextSlide = () => {
     if (index >= currentSlides.length - 1) {
-      console.log('oui')
       index = 1
     } else {
       index++
@@ -77,7 +76,6 @@ export const createSlider = (slider) => {
   const indicators = document.body.querySelectorAll('.indicator')
 
   const moveToSlide = (number) => {
-    console.log(number)
     currentSlides.forEach((slide) => {
       slide.style.transition = '750ms ease-in-out'
       slide.style.transform = `translateX(-${number}00%)`
