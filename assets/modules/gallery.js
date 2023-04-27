@@ -10,7 +10,7 @@ export const createGallery = (gallery) => {
       tags.push(image.tag)
       DOMTags.innerHTML += `<li><button>${image.tag}</button></li>`
     }
-
+    DOMGallery.innerHTML = ''
     DOMGallery.innerHTML += `<img width="600" height="600" srcset="${image.imageUrl}?w=360 320w, ${image.imageUrl}?w=575 640w, ${image.imageUrl}?w=900 1024w" src="${image.imageUrl}?w=900"  alt="${image.altText}" data-tag="${image.tag}">`
   })
 

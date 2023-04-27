@@ -72,8 +72,10 @@ body {
 }
 
 .picture img {
-  height: 100%;
+  height: auto;
+  min-width: 190px;
   width: 100%;
+  background-color: #d2d2d2;
 }
 #about-me {
   flex: 2;
@@ -147,6 +149,7 @@ body {
   object-fit: cover;
   aspect-ratio: 1/1;
   width: 30%;
+  height: auto;
   min-width: 300px;
 }
 
@@ -160,6 +163,7 @@ body {
   width: 70%;
   margin: auto;
   padding-block: 3em;
+  min-height: 250px;
 }
 
 figure,
@@ -497,6 +501,8 @@ input[type='submit'] {
 
 .slider {
   position: relative;
+  width: 100%;
+  aspect-ratio: 80/37;
 }
 
 .slider__button {
