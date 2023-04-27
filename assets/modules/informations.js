@@ -2,7 +2,7 @@ export const informations = (userInformations) => {
   // Profile picture
   const DOMProfilePicture = document.body.querySelector('#profile-picture')
 
-  DOMProfilePicture.src = userInformations.profilePicture + `?w=560`
+  DOMProfilePicture.src = userInformations.profilePicture + `?w=560&h=560`
   DOMProfilePicture.srcset = `${userInformations.profilePicture}?w=320 320w, ${userInformations.profilePicture}?w=560 560w`
   DOMProfilePicture.alt = userInformations.profilePictureAltText
 

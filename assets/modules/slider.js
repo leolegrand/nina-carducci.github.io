@@ -6,7 +6,7 @@ export const createSlider = (slider) => {
   let index = 1
 
   slider.map((slide) => {
-    DOMSlides.innerHTML += `<img
+    DOMSlides.innerHTML += `<img width="410" height="190"
     srcset="${slide.imageUrl}?w=320 320w, ${slide.imageUrl}?w=640 640w, ${slide.imageUrl}?w=1024 1024w, ${slide.imageUrl}?w=1920 1920w"
         src="${slide.imageUrl}?w=1920"
         alt="${slide.altText}"
