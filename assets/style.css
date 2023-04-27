@@ -477,6 +477,12 @@ input[type='submit'] {
   animation: disappearToBottom 600ms ease;
 }
 
+@media all and (max-width: 1055px) {
+  #gallery img {
+    width: 48%;
+  }
+}
+
 @media all and (max-width: 700px) {
   #gallery {
     margin: 0;
@@ -487,12 +493,70 @@ input[type='submit'] {
   }
 }
 
+.slider {
+  position: relative;
+}
+
+.slider__button {
+  z-index: 1;
+
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+
+  margin: auto 0;
+
+  padding-left: 25%;
+
+  cursor: pointer;
+}
+
+.slider__button--next {
+  right: 0;
+}
+
+.slider__button--prev {
+  transform: rotate(180deg);
+}
+
 .slides {
   overflow: hidden;
   display: flex;
 }
 
 .slide {
+  transform: translateX(-100%);
   object-fit: contain;
   width: 100%;
+  transition: 750ms ease-in-out;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 10;
+  position: absolute;
+}
+
+.indicator {
+  cursor: pointer;
+  padding: 0;
+  box-sizing: content-box;
+  border: none;
+  height: 3px;
+  width: 30px;
+  background-color: white;
+  opacity: 0.6;
+  transition: 500ms;
+}
+
+.indicator--active {
+  opacity: 1;
 }
