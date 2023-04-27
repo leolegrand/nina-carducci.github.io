@@ -2,8 +2,8 @@ export const informations = (userInformations) => {
   // Profile picture
   const DOMProfilePicture = document.body.querySelector('#profile-picture')
 
-  DOMProfilePicture.src = userInformations.profilePicture
-  DOMProfilePicture.srcset = `${userInformations.profilePicture}?w320 320w, ${userInformations.profilePicture}?w640 640w, ${userInformations.profilePicture}?w1024 1024w, ${userInformations.profilePicture}?w1920 1920w`
+  DOMProfilePicture.src = userInformations.profilePicture + `?w=560`
+  DOMProfilePicture.srcset = `${userInformations.profilePicture}?w=320 320w, ${userInformations.profilePicture}?w=560 560ww`
   DOMProfilePicture.alt = userInformations.profilePictureAltText
 
   // About me
@@ -29,7 +29,7 @@ export const informations = (userInformations) => {
   // Form picture
   const DOMFormPicture = document.body.querySelector('#form-picture')
 
-  DOMFormPicture.src = userInformations.formPicture
-  DOMFormPicture.srcset = `${userInformations.formPicture}?w320 320w, ${userInformations.formPicture}?w640 640w, ${userInformations.formPicture}?w1024 1024w, ${userInformations.formPicture}?w1920 1920w`
+  DOMFormPicture.src = userInformations.formPicture + `?w=560`
+  DOMFormPicture.srcset = `${userInformations.formPicture}?w=320 320w, ${userInformations.formPicture}?w=560 560w`
   DOMFormPicture.alt = userInformations.formPictureAltText
 }

@@ -11,7 +11,7 @@ export const createGallery = (gallery) => {
       DOMTags.innerHTML += `<li><button>${image.tag}</button></li>`
     }
 
-    DOMGallery.innerHTML += `<img srcset="${image.imageUrl}?w=320 320w, ${image.imageUrl}?w=640 640w, ${image.imageUrl}?w=1024 1024w, ${image.imageUrl}?w=1920 1920w" src="${image.imageUrl}?w=1920"  alt="${image.altText}" data-tag="${image.tag}">`
+    DOMGallery.innerHTML += `<img srcset="${image.imageUrl}?w=320 320w, ${image.imageUrl}?w=640 640w, ${image.imageUrl}?w=900 1920w" src="${image.imageUrl}?w=900"  alt="${image.altText}" data-tag="${image.tag}">`
   })
 
   const DOMTagsButton = document.body.querySelectorAll('#tags button')
