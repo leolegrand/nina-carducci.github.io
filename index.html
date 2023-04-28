@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
+    <title>Nina Carducci - Photographe Freelance</title>
+    <meta
+      name="description"
+      content="Venez découvrir Nina Carducci, une photographe freelance professionnelle disponible pour tout vos projets. Un service de qualité réalisé par une passionnée."
+    />
     <link rel="stylesheet" href="./assets/style.css" />
 
     <meta charset="UTF-8" />
@@ -22,15 +27,18 @@
   </head>
   <body>
     <div class="top-header">
-      <h3 class="name">Nina Carducci</h3>
+      <h1 class="name">Nina Carducci</h1>
       <div class="nav">
         <ul>
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#gallery">Galerie</a></li>
-          <li><a href="#services">Service</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#about" title="En savoir plus à propos de moi">À propos</a>
+          </li>
+          <li><a href="#gallery" title="Consulter ma galerie">Galerie</a></li>
+          <li><a href="#services" title="Mes service">Service</a></li>
+          <li><a href="#contact" title="Contactez-moi">Contact</a></li>
           <li>
             <a
+              title="Venez voir mon compte Instagram"
               class="social-link"
               href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
               target="_blank"
@@ -93,82 +101,46 @@
         <img id="profile-picture" src="" width="250" height="250" />
       </div>
       <div id="about-me">
-        <h3 class="about-me__title">A propos de moi</h3>
-        <h6 class="about-me__introduction" id="about-text-1"></h6>
+        <h2 class="about-me__title">A propos de moi</h2>
+        <p class="about-me__introduction" id="about-text-1"></p>
         <p id="about-text-2"></p>
       </div>
     </div>
     <section class="portfolio">
-      <h3>Portfolio</h3>
+      <h2 class="title">Portfolio</h2>
       <nav>
         <ul id="tags">
           <li><button class="active-tag">Tous</button></li>
         </ul>
       </nav>
       <div id="gallery">
-        <img
-          src="./assets/icons/tinydot.gif"
-          alt="tiny dot"
-          class="loading-content__gallery-img"
-        />
-        <img
-          src="./assets/icons/tinydot.gif"
-          alt="tiny dot"
-          class="loading-content__gallery-img"
-        />
-        <img
-          src="./assets/icons/tinydot.gif"
-          alt="tiny dot"
-          class="loading-content__gallery-img"
-        />
-        <img
-          src="./assets/icons/tinydot.gif"
-          alt="tiny dot"
-          class="loading-content__gallery-img"
-        />
-        <img
-          src="./assets/icons/tinydot.gif"
-          alt="tiny dot"
-          class="loading-content__gallery-img"
-        />
-        <img
-          src="./assets/icons/tinydot.gif"
-          alt="tiny dot"
-          class="loading-content__gallery-img"
-        />
-        <img
-          src="./assets/icons/tinydot.gif"
-          alt="tiny dot"
-          class="loading-content__gallery-img"
-        />
-        <img
-          src="./assets/icons/tinydot.gif"
-          alt="tiny dot"
-          class="loading-content__gallery-img"
-        />
-        <img
-          src="./assets/icons/tinydot.gif"
-          alt="tiny dot"
-          class="loading-content__gallery-img"
-        />
+        <img src="./assets/icons/tinydot.gif" alt="tiny dot" />
+        <img src="./assets/icons/tinydot.gif" alt="tiny dot" />
+        <img src="./assets/icons/tinydot.gif" alt="tiny dot" />
+        <img src="./assets/icons/tinydot.gif" alt="tiny dot" />
+        <img src="./assets/icons/tinydot.gif" alt="tiny dot" />
+        <img src="./assets/icons/tinydot.gif" alt="tiny dot" />
+        <img src="./assets/icons/tinydot.gif" alt="tiny dot" />
+        <img src="./assets/icons/tinydot.gif" alt="tiny dot" />
+        <img src="./assets/icons/tinydot.gif" alt="tiny dot" />
       </div>
     </section>
     <div class="quote">
       <figure>
         <blockquote>
-          <h1 class="quote__text" id="quote-1"></h1>
+          <p class="quote__text" id="quote-1"></p>
         </blockquote>
         <figcaption class="quote__author" id="quote-1-author"></figcaption>
       </figure>
     </div>
     <div id="services">
-      <h3 class="title">Mes services</h3>
+      <h2 class="title">Mes services</h2>
       <div class="container" id="services-container"></div>
     </div>
     <div class="quote">
       <figure>
         <blockquote>
-          <h1 class="quote__text" id="quote-2"></h1>
+          <p class="quote__text" id="quote-2"></p>
         </blockquote>
         <figcaption class="quote__author" id="quote-2-author"></figcaption>
       </figure>
@@ -176,7 +148,7 @@
     <div id="contact">
       <div class="container">
         <div class="form-container">
-          <h3>Une question ? Une demande de devis ?</h3>
+          <h2>Une question ? Une demande de devis ?</h2>
           <p>
             N’hésitez pas à m’écrire ! Je vous répondrais en moins de 24 heures
           </p>

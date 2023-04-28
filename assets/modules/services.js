@@ -1,5 +1,4 @@
 export const createServices = (services) => {
-    
   const DOMServices = document.body.querySelector('#services-container')
 
   services.map((service) => {
@@ -11,7 +10,7 @@ export const createServices = (services) => {
       </p>
     </div>
     <div class="service__price">
-      <h4>${service.price}</h4>
+      <p>${service.price}</p>
       <span>${service.info}</span>
     </div>
   </div>`
