@@ -512,6 +512,7 @@ input[type='submit'] {
   position: relative;
   width: 100%;
   aspect-ratio: 80/37;
+  background-color: #f6d2b8;
 }
 
 .slider__button {
@@ -525,7 +526,8 @@ input[type='submit'] {
   margin: auto 0;
 
   padding-left: 25%;
-
+  background-color: transparent;
+  border: none;
   cursor: pointer;
 }
 

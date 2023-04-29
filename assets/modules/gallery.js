@@ -104,27 +104,30 @@ export const createGallery = (gallery) => {
     dialog.showModal()
 
     // convert NodeList into an Array then find index of current displayed item
-    const arrayOfGalleryItems = Array.from(DOMGalleryItems)
-    let index = arrayOfGalleryItems.indexOf(item)
+    const currentGalleryItems = document.body.querySelectorAll(
+      '#gallery img:not(.hidden)'
+    )
+    const arrayCurrentGalleryItems = Array.from(currentGalleryItems)
+    let index = arrayCurrentGalleryItems.indexOf(item)
 
     // lightbox control, go to the previous item
     const lightboxPrev = () => {
       index--
       if (index < 0) {
-        index = arrayOfGalleryItems.length - 1
+        index = arrayCurrentGalleryItems.length - 1
       }
-      img.src = arrayOfGalleryItems[index].src
-      img.alt = arrayOfGalleryItems[index].alt
+      img.src = arrayCurrentGalleryItems[index].src
+      img.alt = arrayCurrentGalleryItems[index].alt
     }
 
     // lightbox control, go to the next item
     const lightboxNext = () => {
       index++
-      if (index >= arrayOfGalleryItems.length) {
+      if (index >= arrayCurrentGalleryItems.length) {
         index = 0
       }
-      img.src = arrayOfGalleryItems[index].src
-      img.alt = arrayOfGalleryItems[index].alt
+      img.src = arrayCurrentGalleryItems[index].src
+      img.alt = arrayCurrentGalleryItems[index].alt
     }
 
     prevButton.addEventListener('click', lightboxPrev)

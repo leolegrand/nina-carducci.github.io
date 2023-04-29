@@ -17,6 +17,24 @@ export const createSlider = (slider) => {
     }"></button>`
   })
 
+  // scroll through the slides at regular intervals
+  let sliderTimer
+
+  const startSlide = () => {
+    clearInterval(sliderTimer)
+    sliderTimer = setInterval(() => {
+      nextSlide()
+    }, 5000)
+  }
+
+  // stops scrolling if the user hovers their mouse over the slider
+  DOMSlider.addEventListener('mouseenter', () => clearInterval(sliderTimer))
+  // // resumes scrolling if the user is no longer on the slider
+  DOMSlider.addEventListener('mouseleave', startSlide)
+
+  // start the slideshow
+  startSlide()
+
   const slides = document.body.querySelectorAll('.slide')
 
   // clone the first image and place it at the end,
@@ -30,56 +48,60 @@ export const createSlider = (slider) => {
   // all slides, including the cloned ones
   const currentSlides = document.body.querySelectorAll('.slide')
 
+  const sliderButtons = document.body.querySelectorAll('.slider button')
+
   // since the slide is "infinite", when the user arrives on a duplicated image,
   // we take the index back to the original image
   currentSlides.forEach((slide) => {
     slide.addEventListener('transitionend', () => {
+      sliderButtons.forEach((button) => (button.disabled = false))
       if (index === currentSlides.length - 1) {
         index = 1
+        changeIndicator(index)
         currentSlides.forEach((slide) => {
           slide.style.transition = 'none'
           slide.style.transform = `translateX(-${index}00%)`
         })
-        changeIndicator(index)
         return
       }
       if (index === 0) {
         index = currentSlides.length - 2
+        changeIndicator(index)
         currentSlides.forEach((slide) => {
           slide.style.transition = 'none'
           slide.style.transform = `translateX(-${index}00%)`
         })
-        changeIndicator(index)
         return
       }
     })
   })
 
   const nextSlide = () => {
-    if (index >= currentSlides.length - 1) {
-      index = 1
-    } else {
-      index++
-    }
+    index++
     moveToSlide(index)
   }
 
   const prevSlide = () => {
-    if (index < 0) {
-      index = 1
-    } else {
-      index--
-    }
+    index--
     moveToSlide(index)
   }
 
   const indicators = document.body.querySelectorAll('.indicator')
 
   const moveToSlide = (number) => {
+    // since we listen the "transitionend" event that didnt work when the webpage is on background,
+    // we have to manually reset the value when this occur
+    if (number > 4) {
+      number = 1
+      index = 1
+      startSlide()
+    }
+    sliderButtons.forEach((button) => (button.disabled = true))
     currentSlides.forEach((slide) => {
       slide.style.transition = '750ms ease-in-out'
       slide.style.transform = `translateX(-${number}00%)`
     })
+
     changeIndicator(number)
   }
 
@@ -92,25 +114,14 @@ export const createSlider = (slider) => {
     })
   }
 
-  // scroll through the slides at regular intervals
-  let sliderTimer
-
-  const startSlide = () => {
-    sliderTimer = setInterval(() => {
-      nextSlide()
-    }, 5000)
-  }
-
   // for each indicator button, on click, scroll to selected slide
   indicators.forEach((indicator) => {
     const indicatorNumber = indicator.dataset.number
-    indicator.addEventListener('click', () => moveToSlide(indicatorNumber))
+    indicator.addEventListener('click', () => {
+      moveToSlide(indicatorNumber)
+      sliderButtons.forEach((button) => (button.disabled = false))
+    })
   })
-
-  // stops scrolling if the user hovers their mouse over the slider
-  DOMSlider.addEventListener('mouseenter', () => clearInterval(sliderTimer))
-  // // resumes scrolling if the user is no longer on the slider
-  DOMSlider.addEventListener('mouseleave', startSlide)
 
   // two buttons to go to the next or previous element in the slider
   const DOMButtonNext = document.body.querySelector('#slider-next')
@@ -120,8 +131,5 @@ export const createSlider = (slider) => {
   DOMButtonPrev.addEventListener('click', prevSlide)
 
   // watch indicator's state
-  changeIndicator(index)
-
-  // start the slideshow
-  startSlide()
+  changeIndicator(1)
 }
