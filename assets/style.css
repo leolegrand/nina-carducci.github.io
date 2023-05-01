@@ -17,12 +17,12 @@ body {
   padding-block: 30px;
   align-items: center;
   max-height: 100px;
-  box-sizing: border-box;
 }
 
 .top-header .name {
   font-size: 26px;
   font-weight: 500;
+  margin: 0;
 }
 
 .nav ul {
@@ -133,9 +133,8 @@ body {
 }
 
 .active-tag {
-  color: white;
   transition: 500ms;
-  background-color: #3aa436 !important;
+  background-color: #beb45a !important;
 }
 
 #gallery {
@@ -425,7 +424,6 @@ input[type='submit'] {
 .lightbox::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
-  /* backdrop-filter: blur(10px); */
 }
 
 .lightbox__button {
@@ -529,6 +527,7 @@ input[type='submit'] {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  user-select: none;
 }
 
 .slider__button--next {

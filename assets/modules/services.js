@@ -3,15 +3,15 @@ export const createServices = (services) => {
 
   services.map((service) => {
     DOMServices.innerHTML += `<div class="service">
-    <div class="service__description">
+    <div class="service__description" tabindex="6">
       <h3>${service.title}</h3>
       <p>
         ${service.body}
       </p>
     </div>
     <div class="service__price">
-      <p>${service.price}</p>
-      <span>${service.info}</span>
+      <p tabindex="6">${service.price}</p>
+      <span tabindex="6">${service.info}</span>
     </div>
   </div>`
   })

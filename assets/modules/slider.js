@@ -12,9 +12,9 @@ export const createSlider = (slider) => {
         alt="${slide.altText}"
         class="slide"
       />`
-    DOMIndicators.innerHTML += `<button class="indicator" data-number="${
+    DOMIndicators.innerHTML += `<button class="indicator" aria-label="Go to slide ${
       slider.indexOf(slide) + 1
-    }"></button>`
+    }" data-number="${slider.indexOf(slide) + 1}" tabindex="2"></button>`
   })
 
   // scroll through the slides at regular intervals

@@ -85,30 +85,46 @@
     </script>
   </head>
   <body>
-    <div class="top-header">
+    <header class="top-header">
       <h1 class="name">Nina Carducci</h1>
-      <div class="nav">
+      <nav role="navigation" class="nav">
         <ul>
           <li>
-            <a href="#about" title="En savoir plus à propos de moi">À propos</a>
+            <a href="#about" title="En savoir plus à propos de moi" tabindex="1"
+              >À propos</a
+            >
           </li>
-          <li><a href="#gallery" title="Consulter ma galerie">Galerie</a></li>
-          <li><a href="#services" title="Mes service">Service</a></li>
-          <li><a href="#contact" title="Contactez-moi">Contact</a></li>
+          <li>
+            <a href="#gallery" title="Consulter ma galerie" tabindex="1"
+              >Galerie</a
+            >
+          </li>
+          <li>
+            <a href="#services" title="Mes service" tabindex="1">Service</a>
+          </li>
+          <li>
+            <a href="#contact" title="Contactez-moi" tabindex="1">Contact</a>
+          </li>
           <li>
             <a
+              tabindex="1"
               title="Venez voir mon compte Instagram"
               class="social-link"
               href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
               target="_blank"
-              ><img src="./assets/icons/instagram.png" alt=""
+              ><img src="./assets/icons/instagram.png" alt="Logo Instagram"
             /></a>
           </li>
         </ul>
-      </div>
-    </div>
-    <section class="slider" id="slider">
-      <button class="slider__button slider__button--prev" id="slider-prev">
+      </nav>
+    </header>
+    <aside role="banner" class="slider" id="slider">
+      <button
+        tabindex="-1"
+        class="slider__button slider__button--prev"
+        id="slider-prev"
+        aria-label="Slider Previous Slide"
+      >
         <svg
           width="6vw"
           version="1.1"
@@ -130,7 +146,12 @@
           </g>
         </svg>
       </button>
-      <button class="slider__button slider__button--next" id="slider-next">
+      <button
+        tabindex="-1"
+        class="slider__button slider__button--next"
+        id="slider-next"
+        aria-label="Slider Next Slide"
+      >
         <svg
           width="6vw"
           version="1.1"
@@ -155,22 +176,22 @@
 
       <div class="indicators" id="indicators"></div>
       <div class="slides" id="slides"></div>
-    </section>
-    <div id="about">
-      <div class="picture left">
+    </aside>
+    <main id="about">
+      <div class="picture left" tabindex="3">
         <img id="profile-picture" src="" width="250" height="250" />
       </div>
       <div id="about-me">
         <h2 class="about-me__title">A propos de moi</h2>
-        <p class="about-me__introduction" id="about-text-1"></p>
-        <p id="about-text-2"></p>
+        <p class="about-me__introduction" id="about-text-1" tabindex="3"></p>
+        <p id="about-text-2" tabindex="3"></p>
       </div>
-    </div>
+    </main>
     <section class="portfolio">
       <h2 class="title">Portfolio</h2>
       <nav>
         <ul id="tags">
-          <li><button class="active-tag">Tous</button></li>
+          <li><button class="active-tag" tabindex="4">Tous</button></li>
         </ul>
       </nav>
       <div id="gallery">
@@ -185,27 +206,27 @@
         <img src="./assets/icons/tinydot.gif" alt="tiny dot" />
       </div>
     </section>
-    <div class="quote">
+    <aside class="quote">
       <figure>
         <blockquote>
           <p class="quote__text" id="quote-1"></p>
         </blockquote>
         <figcaption class="quote__author" id="quote-1-author"></figcaption>
       </figure>
-    </div>
-    <div id="services">
+    </aside>
+    <section id="services">
       <h2 class="title">Mes services</h2>
       <div class="container" id="services-container"></div>
-    </div>
-    <div class="quote">
+    </section>
+    <aside class="quote">
       <figure>
         <blockquote>
           <p class="quote__text" id="quote-2"></p>
         </blockquote>
         <figcaption class="quote__author" id="quote-2-author"></figcaption>
       </figure>
-    </div>
-    <div id="contact">
+    </aside>
+    <footer id="contact">
       <div class="container">
         <div class="form-container">
           <h2>Une question ? Une demande de devis ?</h2>
@@ -213,11 +234,11 @@
             N’hésitez pas à m’écrire ! Je vous répondrais en moins de 24 heures
           </p>
           <form action="" method="post">
-            <label>Nom</label>
+            <label for="nom">Nom</label>
             <input type="text" name="nom" id="nom" />
-            <label>Email</label>
+            <label for="email">Email</label>
             <input type="email" name="email" id="email" />
-            <label>Message</label>
+            <label for="message">Message</label>
             <textarea
               name="message"
               id="message"
@@ -231,7 +252,7 @@
           <img id="form-picture" src="" width="250" height="250" />
         </div>
       </div>
-    </div>
+    </footer>
   </body>
   <script src="./assets/scripts.js" type="module" defer async></script>
 </html>
