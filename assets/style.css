@@ -452,6 +452,13 @@ input[type='submit'] {
     width: 100%;
   }
 }
+
+@media all and (max-width: 500px) {
+  #about-me {
+    min-height: 420px;
+  }
+}
+
 .slider {
   position: relative;
   width: 100%;
