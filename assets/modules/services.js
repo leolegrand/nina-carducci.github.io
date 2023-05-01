@@ -1,18 +1,1 @@
-export const createServices = (services) => {
-  const DOMServices = document.body.querySelector('#services-container')
-
-  services.map((service) => {
-    DOMServices.innerHTML += `<div class="service">
-    <div class="service__description" tabindex="6">
-      <h3>${service.title}</h3>
-      <p>
-        ${service.body}
-      </p>
-    </div>
-    <div class="service__price">
-      <p tabindex="6">${service.price}</p>
-      <span tabindex="6">${service.info}</span>
-    </div>
-  </div>`
-  })
-}
+export const createServices=e=>{const n=document.body.querySelector("#services-container");e.map((e=>{n.innerHTML+=`<div class="service">\n    <div class="service__description" tabindex="6">\n      <h3>${e.title}</h3>\n      <p>\n        ${e.body}\n      </p>\n    </div>\n    <div class="service__price">\n      <p tabindex="6">${e.price}</p>\n      <span tabindex="6">${e.info}</span>\n    </div>\n  </div>`}))};
