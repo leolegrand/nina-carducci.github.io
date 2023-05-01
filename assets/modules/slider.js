@@ -3,7 +3,7 @@ export const createSlider = (e) => {
     n = document.body.querySelector('#indicators'),
     r = document.body.querySelector('#slides')
   let o,
-    a = 2
+    a = 1
   e.map((t) => {
     ;(r.innerHTML += `<img width="410" height="190"\n    srcset="${t.imageUrl}?w=320 320w, ${t.imageUrl}?w=400 400w, ${t.imageUrl}?w=500 500w, ${t.imageUrl}?w=640 640w, ${t.imageUrl}?w=1024 1024w, ${t.imageUrl}?w=1920 1920w"\n        src="${t.imageUrl}?w=1920"\n        alt="${t.altText}"\n        class="slide"\n      />`),
       (n.innerHTML += `<button class="indicator" aria-label="Go to slide ${
@@ -79,5 +79,5 @@ export const createSlider = (e) => {
   document.body.querySelector('#slider-prev').addEventListener('click', () => {
     a--, b(a)
   }),
-    v(2)
+    v(1)
 }
