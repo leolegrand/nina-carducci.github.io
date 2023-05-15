@@ -1,3 +1,6 @@
+![Portfolio main page desktop](./readme-img-desktop.png 'Nina Carducci main page')
+![Portfolio main page desktop](./readme-img-desktop2.png 'Nina Carducci main page')
+
 # 📸 Nina Carducci 
 
 The portfolio required improvements on different axes, each point was treated in order to meet the expectations of the client
